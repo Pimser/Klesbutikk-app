@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 3000;
+const authRoutes = require("./routes/authRoutes");
 
 
 app.set("view engine", "ejs");
@@ -26,3 +26,5 @@ app.get("/about", (req, res) => {
 app.listen(PORT, () => {
   console.log("Serveren kjører på port 3000!");
 });
+
+app.use(authRoutes);
